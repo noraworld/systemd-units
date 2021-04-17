@@ -1,0 +1,13 @@
+[Unit]
+Description=dummy sound service
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/ubuntu/Workspace/bluetoothctl-autoconnector
+ExecStart=/usr/bin/env bash dummysound
+TimeoutSec=15
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
