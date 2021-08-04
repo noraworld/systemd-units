@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=simple
-WorkingDirectory=/home/ubuntu/Workspace/bluetoothctl-autoconnector
+WorkingDirectory=/home/ubuntu/workspace/bluetoothctl-autoconnector
 ExecStart=/usr/bin/env bash dummysound
 TimeoutSec=15
 Restart=always
