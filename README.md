@@ -9,3 +9,5 @@ systemctl --user link $PWD/lib/systemd/user/*
 sudo systemctl daemon-reload
 systemctl --user daemon-reload
 ```
+
+Note that the above commands should be executed every time a new file is added.
