@@ -1,0 +1,14 @@
+[Unit]
+Description=mastodon-to-slack
+After=network.target
+
+[Service]
+Type=simple
+User=kosuke
+WorkingDirectory=/home/kosuke/workspace/mastodon-to-slack
+ExecStart=/bin/bash -lc 'ruby src/mastodon_to_slack.rb'
+TimeoutSec=15
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

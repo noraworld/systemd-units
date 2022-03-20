@@ -1,0 +1,15 @@
+[Unit]
+Description=ghost
+After=network.target
+
+[Service]
+Type=simple
+User=kosuke
+WorkingDirectory=/home/kosuke/ghost
+Environment="NODE_ENV=production"
+ExecStart=/bin/bash -lc 'node index.js'
+TimeoutSec=15
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

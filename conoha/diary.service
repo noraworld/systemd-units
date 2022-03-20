@@ -1,0 +1,16 @@
+[Unit]
+Description=diary
+After=network.target
+
+[Service]
+Type=simple
+User=kosuke
+WorkingDirectory=/home/kosuke/diary
+Environment="RAILS_ENV=production"
+Environment="PORT=3001"
+ExecStart=/bin/bash -lc 'bundle exec puma -C config/puma.rb'
+TimeoutSec=15
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

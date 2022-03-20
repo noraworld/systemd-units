@@ -1,0 +1,14 @@
+[Unit]
+Description=noraworld
+After=network.target
+
+[Service]
+Type=simple
+User=kosuke
+WorkingDirectory=/home/kosuke/noraworld/app
+ExecStart=/bin/bash -lc 'node server.js'
+TimeoutSec=15
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

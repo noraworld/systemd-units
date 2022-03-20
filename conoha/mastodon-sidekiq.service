@@ -1,0 +1,16 @@
+[Unit]
+Description=mastodon-sidekiq
+After=network.target
+
+[Service]
+Type=simple
+User=kosuke
+WorkingDirectory=/home/kosuke/mastodon
+Environment="RAILS_ENV=production"
+Environment="DB_POOL=40"
+ExecStart=/bin/bash -lc 'bundle exec sidekiq -c 40 -q default -q mailers -q pull -q push'
+TimeoutSec=15
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
