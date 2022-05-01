@@ -1,0 +1,13 @@
+[Unit]
+Description=fan-pippi
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/ubuntu/workspace/fan-pippi
+ExecStart=/home/ubuntu/.asdf/shims/python main.py
+TimeoutSec=15
+Restart=always
+
+[Install]
+WantedBy=default.target
