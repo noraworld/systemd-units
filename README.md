@@ -10,4 +10,4 @@ sudo systemctl daemon-reload
 systemctl --user daemon-reload
 ```
 
-Note that the above commands should be executed every time a new file is added.
+Note that the above commands should be executed every time a new file is added. Do not forget to enable new services if you need to.
