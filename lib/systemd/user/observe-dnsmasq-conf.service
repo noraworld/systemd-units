@@ -1,0 +1,13 @@
+[Unit]
+Description=observe-dnsmasq-conf
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/ubuntu/workspace/cron-conf/raspberrypi/bin
+ExecStart=/home/ubuntu/workspace/cron-conf/raspberrypi/bin/observe-dnsmasq-toggle-conf --event modify --target /home/ubuntu/workspace/dnsmasq-conf/dnsmasq
+TimeoutSec=15
+Restart=always
+
+[Install]
+WantedBy=default.target
