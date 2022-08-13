@@ -5,7 +5,7 @@ After=network.target
 [Service]
 Type=simple
 WorkingDirectory=/home/ubuntu/workspace/cron-conf/raspberrypi/bin
-ExecStart=/home/ubuntu/workspace/cron-conf/raspberrypi/bin/observe-dnsmasq-toggle-conf --event delete --file nordvpn_upstream.conf --source /home/ubuntu/workspace/dnsmasq-conf/dnsmasq/dnsmasq.priv/toggle --target /etc/dnsmasq.priv/toggle
+ExecStart=/home/ubuntu/workspace/cron-conf/raspberrypi/bin/observe-dnsmasq-toggle-conf --event delete --file nordvpn_upstream.conf --source /home/ubuntu/workspace/dnsmasq-conf/dnsmasq/dnsmasq.priv/toggle --target /etc/dnsmasq.priv/toggle --mode link
 TimeoutSec=15
 Restart=always
 

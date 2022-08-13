@@ -6,6 +6,7 @@ A collection of systemd unit files.
 cd systemd-units
 sudo systemctl link $PWD/lib/systemd/system/*
 systemctl --user link $PWD/lib/systemd/user/*
+systemctl --user link $PWD/lib/systemd/user/observer/*
 sudo systemctl daemon-reload
 systemctl --user daemon-reload
 ```
