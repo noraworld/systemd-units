@@ -10,6 +10,7 @@ systemctl --user link $PWD/lib/systemd/user/observer/*
 sudo systemctl daemon-reload
 systemctl --user daemon-reload
 sudo ln -s $PWD/etc/systemd/timesyncd.conf.d /etc/systemd
+sudo ln -s $PWD/etc/systemd/system.conf.d /etc/systemd
 ```
 
 Note that the above commands should be executed every time a new file is added. Do not forget to enable new services if you need to.
