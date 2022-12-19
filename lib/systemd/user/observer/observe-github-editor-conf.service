@@ -1,0 +1,13 @@
+[Unit]
+Description=observe-github-editor-conf
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/ubuntu/workspace/cron-conf/raspberrypi/bin
+ExecStart=/home/ubuntu/workspace/cron-conf/raspberrypi/bin/observe-dnsmasq-toggle-conf --event delete --file github_editor.conf --source /home/ubuntu/workspace/dnsmasq-conf/dnsmasq/dnsmasq.toggle --target /etc/dnsmasq.toggle --mode link
+TimeoutSec=15
+Restart=always
+
+[Install]
+WantedBy=default.target
