@@ -7,7 +7,7 @@ Type=simple
 User=ubuntu
 WorkingDirectory=/home/ubuntu/workspace/diary
 Environment="JEKYLL_ENV=production"
-ExecStart=/home/ubuntu/.asdf/shims/bundle exec jekyll serve --skip-initial-build --host=diary.test --port=4000
+ExecStart=/home/ubuntu/.asdf/shims/bundle exec jekyll serve --host=diary.test --port=4000
 TimeoutSec=15
 Restart=always
 
