@@ -7,6 +7,7 @@ cd systemd-units
 sudo systemctl link $PWD/lib/systemd/system/*
 systemctl --user link $PWD/lib/systemd/user/*
 systemctl --user link $PWD/lib/systemd/user/observer/*
+systemctl --user enable $PWD/lib/systemd/user/observer/*
 sudo systemctl daemon-reload
 systemctl --user daemon-reload
 sudo ln -s $PWD/etc/systemd/timesyncd.conf.d /etc/systemd
