@@ -1,0 +1,17 @@
+[Unit]
+Description=mastodon-web
+After=network.target
+
+[Service]
+Type=simple
+User=noraworld
+EnvironmentFile=/etc/sysconfig/noraworld
+WorkingDirectory=/home/noraworld/webroot/mastodon
+Environment="RAILS_ENV=production"
+Environment="PORT=3000"
+ExecStart=/home/noraworld/.anyenv/envs/rbenv/shims/bundle exec puma -C config/puma.rb
+TimeoutSec=15
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

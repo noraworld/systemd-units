@@ -1,0 +1,17 @@
+[Unit]
+Description=mastodon-streaming
+After=network.target
+
+[Service]
+Type=simple
+User=noraworld
+EnvironmentFile=/etc/sysconfig/noraworld
+WorkingDirectory=/home/noraworld/webroot/mastodon
+Environment="NODE_ENV=production"
+Environment="PORT=4000"
+ExecStart=/home/noraworld/.anyenv/envs/nodenv/shims/npm run start
+TimeoutSec=15
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
