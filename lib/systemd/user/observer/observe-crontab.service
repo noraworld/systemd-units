@@ -6,7 +6,7 @@ After=network.target
 Type=simple
 WorkingDirectory=/home/ubuntu/workspace/cron-conf/raspberrypi/bin
 # https://webdock.io/en/docs/how-guides/system-maintenance/how-configure-crontab-linux#:~:text=The%20cron%20jobs%20are%20listed%20in%20crontab%20files%20and%20are%20located%20in%20the%20cron%20spool%20area%20/var/spool/cron/crontabs.
-ExecStart=/home/ubuntu/workspace/cron-conf/raspberrypi/bin/observe-dnsmasq-toggle-conf --event modify --target /var/spool/cron/crontabs --mode cron --sudo
+ExecStart=/home/ubuntu/workspace/cron-conf/raspberrypi/bin/observe-dnsmasq-toggle-conf --event modify,move,delete --target /var/spool/cron/crontabs --mode cron --sudo
 TimeoutSec=15
 Restart=always
 
