@@ -5,7 +5,7 @@ After=network.target
 [Service]
 Type=simple
 WorkingDirectory=/home/ubuntu/workspace/cron-conf/raspberrypi/bin
-ExecStart=/home/ubuntu/workspace/cron-conf/raspberrypi/bin/observe-dnsmasq-toggle-conf --event delete --file superman_upstream.conf --source /home/ubuntu/workspace/dnsmasq-conf/dnsmasq/dnsmasq.priv/toggle --target /etc/dnsmasq.priv/toggle --mode link
+ExecStart=/home/ubuntu/workspace/cron-conf/raspberrypi/bin/observe-dnsmasq-toggle-conf --event move,delete --file superman_upstream.conf --source /home/ubuntu/workspace/dnsmasq-conf/dnsmasq/dnsmasq.priv/toggle --target /etc/dnsmasq.priv/toggle --mode ln
 TimeoutSec=15
 Restart=always
 
