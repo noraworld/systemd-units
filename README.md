@@ -7,7 +7,8 @@ cd systemd-units
 sudo systemctl link $PWD/lib/systemd/system/*
 systemctl --user link $PWD/lib/systemd/user/*
 systemctl --user link $PWD/lib/systemd/user/observer/*
-systemctl --user enable $PWD/lib/systemd/user/observer/*
+# I feel like they don't necessarily have to reboot automatically here because cron does that. On the contrary, automatic reboots have the side effect that some of them delete the changes in the repository.
+# systemctl --user enable $PWD/lib/systemd/user/observer/*
 sudo systemctl daemon-reload
 systemctl --user daemon-reload
 sudo ln -s $PWD/etc/systemd/timesyncd.conf.d /etc/systemd
