@@ -17,8 +17,14 @@ sudo ln -s $PWD/etc/systemd/system.conf.d /etc/systemd
 
 Note that the above commands should be executed every time a new file is added. Do not forget to enable new services if you need to.
 
-## Check systemd configuration
+## Tips
+### Check systemd configuration
 ```shell
 systemd-analyze cat-config systemd/system.conf
 systemd-analyze cat-config systemd/timesyncd.conf
+```
+
+### Check if automatic reboots for observers are not enabled
+```shell
+ls $PWD/lib/systemd/user/observer | xargs systemctl --user is-enabled
 ```
