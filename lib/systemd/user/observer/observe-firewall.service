@@ -1,0 +1,14 @@
+[Unit]
+Description=observe-firewall
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/ubuntu/workspace/cron-conf/raspberrypi/bin
+# "--source" and "--target" are dummy because they have nothing to do with Firewall
+ExecStart=/home/ubuntu/workspace/cron-conf/raspberrypi/bin/observe-dnsmasq-toggle-conf --event create,modify,move,delete --source /home/ubuntu/workspace/dnsmasq-conf/dnsmasq/dnsmasq.toggle --target /etc/dnsmasq.toggle --mode firewall
+TimeoutSec=15
+Restart=always
+
+[Install]
+WantedBy=default.target
