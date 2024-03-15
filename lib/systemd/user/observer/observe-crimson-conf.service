@@ -1,0 +1,13 @@
+[Unit]
+Description=observe-crimson-conf
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/ubuntu/workspace/cron-conf/raspberrypi/bin
+ExecStart=/home/ubuntu/workspace/cron-conf/raspberrypi/bin/observe-dnsmasq-toggle-conf --event create --file crimson.conf --target /etc/dnsmasq.priv/toggle --mode unlink
+TimeoutSec=15
+Restart=always
+
+[Install]
+WantedBy=default.target
