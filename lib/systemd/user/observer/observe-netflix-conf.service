@@ -5,7 +5,7 @@ After=network.target
 [Service]
 Type=simple
 WorkingDirectory=/home/ubuntu/workspace/cron-conf/raspberrypi/bin
-ExecStart=/home/ubuntu/workspace/cron-conf/raspberrypi/bin/observe-dnsmasq-toggle-conf --event move,delete --file netflix.conf --source /home/ubuntu/workspace/dnsmasq-conf/dnsmasq/dnsmasq.toggle --target /etc/dnsmasq.toggle --mode ln
+ExecStart=/home/ubuntu/workspace/cron-conf/raspberrypi/bin/observe-dnsmasq-toggle-conf --event move,delete --file netflix.conf --source /home/ubuntu/workspace/dnsmasq-conf/dnsmasq/dnsmasq.toggle --target /etc/dnsmasq.toggle --mode ln --vpn
 TimeoutSec=15
 Restart=always
 
