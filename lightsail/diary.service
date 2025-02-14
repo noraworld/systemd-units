@@ -1,0 +1,17 @@
+[Unit]
+Description=diary
+After=network.target
+
+[Service]
+Type=simple
+User=noraworld
+EnvironmentFile=/etc/sysconfig/noraworld
+WorkingDirectory=/home/noraworld/webroot/diary
+Environment="RAILS_ENV=production"
+Environment="PORT=3001"
+ExecStart=/bin/bash -lc 'cd /home/noraworld/webroot/diary && bundle exec puma -C config/puma.rb'
+TimeoutSec=15
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
