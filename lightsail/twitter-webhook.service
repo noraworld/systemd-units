@@ -1,0 +1,17 @@
+[Unit]
+Description=twitter-webhook
+After=network.target
+
+[Service]
+Type=simple
+User=noraworld
+EnvironmentFile=/etc/sysconfig/noraworld
+WorkingDirectory=/home/noraworld/webroot/twitter_webhook
+Environment="NODE_ENV=production"
+Environment="PORT=5000"
+ExecStart=/home/noraworld/.anyenv/envs/nodenv/shims/node index.js
+TimeoutSec=15
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
