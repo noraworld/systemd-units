@@ -1,0 +1,15 @@
+[Unit]
+Description=github-to-qiita
+After=network.target
+
+[Service]
+Type=simple
+User=noraworld
+EnvironmentFile=/etc/sysconfig/noraworld
+WorkingDirectory=/home/noraworld/webroot/github-to-qiita
+ExecStart=/usr/bin/env ruby main.rb -p 4567 -e production
+TimeoutSec=15
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
