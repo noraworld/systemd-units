@@ -1,0 +1,17 @@
+[Unit]
+Description=aepyornis
+After=network.target
+
+[Service]
+Type=simple
+User=noraworld
+EnvironmentFile=/etc/sysconfig/noraworld
+WorkingDirectory=/home/noraworld/webroot/aepyornis
+# Environment="RACK_ENV=production"
+# Environment="PORT=5001"
+ExecStart=/home/noraworld/.anyenv/envs/rbenv/shims/ruby app.rb -p 5001 -e production
+TimeoutSec=15
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
