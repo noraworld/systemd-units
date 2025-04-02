@@ -1,0 +1,13 @@
+[Unit]
+Description=observe-social-media-allow-conf
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/ubuntu/workspace/cron-conf/raspberrypi/bin
+ExecStart=/home/ubuntu/workspace/cron-conf/raspberrypi/bin/observe-dnsmasq-toggle-conf --event create --file social_media_allow.conf --target /etc/dnsmasq.toggle --mode unlink
+TimeoutSec=15
+Restart=always
+
+[Install]
+WantedBy=default.target
