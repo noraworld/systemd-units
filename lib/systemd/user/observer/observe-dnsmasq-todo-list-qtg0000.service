@@ -1,0 +1,13 @@
+[Unit]
+Description=observe-dnsmasq-todo-list-qtg0000
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/ubuntu/workspace/cron-conf/raspberrypi/bin
+ExecStart=/home/ubuntu/workspace/cron-conf/raspberrypi/bin/observe-dnsmasq-toggle-conf --event create,modify,move,delete --source /home/ubuntu/workspace/dnsmasq-conf/dnsmasq/dnsmasq.toggle --target /etc/dnsmasq.toggle --mode todo --timeframe qtg0000
+TimeoutSec=15
+Restart=always
+
+[Install]
+WantedBy=default.target
